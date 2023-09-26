@@ -17,9 +17,6 @@ public class LoginPage {
     @FindBy(name = "username")
     WebElement loginElement;
 
-
-
-
     @FindBy(name = "password")
     WebElement password;
 
@@ -27,9 +24,6 @@ public class LoginPage {
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
 
     WebElement txtElements;
-
-
-
 
         public LoginPage(WebDriver driver){
 
@@ -43,16 +37,14 @@ public class LoginPage {
        public void doLogin(String username, String Pass) throws InterruptedException {
 
 
-
-
-
-           loginElement.sendKeys(username);
+            loginElement.sendKeys(username);
 
 
            password.sendKeys(Pass);
 
 
             txtElements.click();
+
 
         }
 

@@ -15,6 +15,7 @@ public class Users {
     @FindBy(xpath = "//span[normalize-space()='Users']")
     WebElement txtUsers;
     @FindBy(xpath="//button[normalize-space()='Add User']")
+
     WebElement addBUTTON;
 
     @FindBy(xpath = "//button[normalize-space()='Add User']")
@@ -34,7 +35,7 @@ public class Users {
     @FindBy(name = "mobile")
     WebElement mbileTxt;
     @FindBy(name="role")
-    List<WebElement> roleDropdowns;
+    WebElement roleDropdowns;
 
     @FindBy(css = "button[class='tw-inline-flex tw-items-center tw-justify-center tw-border-transparent tw-rounded tw-text-base tw-font-bold tw-transition-colors focus-visible:outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-opacity-90 disabled:tw-pointer-events-none disabled:tw-cursor-not-allowed tw-ring-offset-background tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-gap-1 h-10 tw-px-4 tw-mx-8 tw-w-full tw-max-w-xs tw-mb-12 tw-py-3']")
     //List<WebElement> addBtn;
@@ -52,29 +53,34 @@ public class Users {
         Actions action = new Actions(driver);
         action.moveToElement(txtUsers).perform();
         txtUsers.click();
+        Thread.sleep(10);
         addBUTTON.click();
 
-        fullnameTxt.sendKeys("AZHAR ALAM");
-        emailTxt.sendKeys("azhar123@gmail.com");
+        fullnameTxt.sendKeys("Sadia Apu");
+        emailTxt.sendKeys("apusadia1@gmail.com");
         adduserBtn.sendKeys("Dhaka");
         genderDropdown.sendKeys(Keys.ARROW_DOWN);
         genderDropdown.sendKeys(Keys.ENTER);
-        institutionnameTxT.sendKeys("AIUB");
+        institutionnameTxT.sendKeys("EAST WEST");
         qualificationTxT.sendKeys("SOFTWARE ENGINEER");
         passText.sendKeys("Abc@1234");
         mbileTxt.sendKeys("01819098765");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
-        WebElement dropdownOption = wait.until(ExpectedConditions.elementToBeClickable(roleDropdowns.get(1)));
+        //WebElement dropdownOption = wait.until(ExpectedConditions.elementToBeClickable(roleDropdowns.get(1)));
        // dropdownOption.click();
 
-        dropdownOption.sendKeys(Keys.ARROW_DOWN);
-        dropdownOption.sendKeys(Keys.ARROW_DOWN);
-        dropdownOption.sendKeys(Keys.ARROW_DOWN);
+       /// dropdownOption.sendKeys(Keys.ARROW_DOWN);
+      /// dropdownOption.sendKeys(Keys.ARROW_DOWN);
+      // dropdownOption.sendKeys(Keys.ARROW_DOWN);
+        roleDropdowns.sendKeys(Keys.ARROW_DOWN);
 
-        //roleDropdowns.get(1).sendKeys(Keys.ENTER);
-        dropdownOption.sendKeys(Keys.ENTER);
+        roleDropdowns.sendKeys(Keys.ENTER);
+       // dropdownOption.sendKeys(Keys.ENTER);
+       /// driver.navigate().back();
         addBtn.click();
+       // Thread.sleep(10);
+
 
 
 

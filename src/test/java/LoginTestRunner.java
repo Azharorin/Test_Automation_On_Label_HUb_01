@@ -4,13 +4,20 @@ public class LoginTestRunner extends SetUp {
 
     @Test
     public void doLogins() throws InterruptedException {
-        LoginPage loginpage = new LoginPage(driver);
 
-       loginpage.doLogin("admin@gigatech.com","Abc@123");
-       ProjectPage pro=new ProjectPage(driver);
-       pro.doAddpro(driver);
-       //Users user=new Users(driver);
-    //   user.doAdduser(driver);
+        LoginPage loginpage = new LoginPage(driver);
+        loginpage.doLogin("admin@gigatech.com","Abc@123");
+
+        ProjectPage pro=new ProjectPage(driver);
+        pro.doAddpro(driver);
+
+        Users user=new Users(driver);
+        user.doAdduser(driver);
+
+       LogoutPage logoutPage=new LogoutPage(driver);
+       Thread.sleep(100);
+       logoutPage.doLogout(driver);
+
 
 
 

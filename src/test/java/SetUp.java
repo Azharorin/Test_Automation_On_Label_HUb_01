@@ -1,6 +1,7 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -17,6 +18,8 @@ public class SetUp {
        // WebDriver driver= new FirefoxDriver(); just only for that it returns null pointer exception
 
         driver= new FirefoxDriver();
+       // driver=new ChromeDriver();
+        driver.manage().window().fullscreen();
 
         driver.manage().window().maximize();
 

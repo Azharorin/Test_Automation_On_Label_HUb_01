@@ -27,8 +27,8 @@ public class ProjectPage {
     WebElement nerTag;
     @FindBy(css = "div[class='tw-flex tw-flex-wrap tw-gap-2'] div:nth-child(1) button:nth-child(1) div:nth-child(1)")
     WebElement nertagSelect;
-    @FindBy(css="button")
-   List<WebElement> createBtn;
+    //@FindBy(xpath="//div[@class='tw-px-14 tw-flex tw-justify-start tw-border-0 modal-footer']//text()")
+   WebElement createBtn;
 
     public ProjectPage (WebDriver driver){
         PageFactory.initElements(driver
@@ -36,31 +36,25 @@ public class ProjectPage {
 
     }
     public void doAddpro(WebDriver driver) throws InterruptedException {
-        Thread.sleep(1000);
-       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+        Thread.sleep(10);
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
        // WebElement dropdownOption = wait.until(ExpectedConditions.elementToBeClickable(projectText.get(1)));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='tw-flex tw-gap-8 tw-flex-wrap']//div[1]//div[1]//button[1]")));
         element.click();
 
         //projectText.click();
         createProjectBtn.click();
-        nameText.sendKeys("azharara");
-        desTxt.sendKeys("this is a test demo project");
+        nameText.sendKeys("Project NER11");
+        desTxt.sendKeys("This is a test demo project FOR NER1");
         nerTag.click();
         nertagSelect.click();
-        //div[@class='tw-px-14 tw-flex tw-justify-start tw-border-0 modal-footer']
-     //  WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='tw-px-14 tw-flex tw-justify-start tw-border-0 modal-footer']")));
 
-        //createBtn.click();
-      //  element1.click();
-     //JavascriptExecutor js= (JavascriptExecutor) driver;
-     // js.executeScript("window.scrollBy(0,documents.body.scrollHeight)");
-    // js.executeScript("window.scrollBy(600,document.body.scrollHeight)");
-       //
-      wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='tw-px-14 tw-flex tw-justify-start tw-border-0 modal-footer']"))).click();
+      wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/div/div[3]/button"))).click();
 
      ;
-        //createBtn.get(1).click();
+        //createBtn.click();
+
+
 
 
 
