@@ -56,8 +56,8 @@ public class Users {
         Thread.sleep(10);
         addBUTTON.click();
 
-        fullnameTxt.sendKeys("Sadia Apu");
-        emailTxt.sendKeys("apusadia1@gmail.com");
+        fullnameTxt.sendKeys("Sadia Apu11");
+        emailTxt.sendKeys("apusadia1@gmail1.com");
         adduserBtn.sendKeys("Dhaka");
         genderDropdown.sendKeys(Keys.ARROW_DOWN);
         genderDropdown.sendKeys(Keys.ENTER);

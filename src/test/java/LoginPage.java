@@ -21,7 +21,7 @@ public class LoginPage {
     WebElement password;
 
 
-    @FindBy(xpath = "//button[normalize-space()='Sign In']")
+    @FindBy(xpath = "//button[normalize-space()='Sign in']")
 
     WebElement txtElements;
 
